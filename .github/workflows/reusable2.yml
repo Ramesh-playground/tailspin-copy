@@ -1,0 +1,23 @@
+name: test reusable workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    uses: Ramesh-playground/tailspin-copy/.github/workflows/main.yml@main
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run:  Hello, world!
+        continue-on-error: true
+        
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: spacegameleaderboard
+          path: C:\Users\rameshkumar\Desktop\spacegame    
