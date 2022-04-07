@@ -5,9 +5,17 @@ on:
    paths-ignore:
     - .github/**
  workflow_dispatch:
-
 jobs:
-    build_api_app:
+ job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup-msbuild
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+ job2:
       name: 🧪 Build API App
       runs-on: ubuntu-latest
       
@@ -21,7 +29,7 @@ jobs:
           
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ./Tailspin
+        working-directory: ./Tailspin.SpaceGame.LeaderboardContainer
         continue-on-error: true
         
       - name: Build
