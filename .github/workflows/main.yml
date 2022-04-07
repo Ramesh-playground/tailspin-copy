@@ -22,6 +22,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
         working-directory: ./Tailspin
+        continue-on-error: true
         
       - name: Build
         run: dotnet build --no-restore
