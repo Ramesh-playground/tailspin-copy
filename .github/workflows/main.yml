@@ -2,8 +2,7 @@ name: Spacegame.Web.Test
 on:
  push:
    branches: [ main ]
-   paths-ignore:
-    - .github/**
+  
  workflow_dispatch:
 
 jobs:
