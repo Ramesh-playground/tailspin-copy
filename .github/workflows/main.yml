@@ -5,21 +5,16 @@ on:
    paths-ignore:
     - .github/**
  workflow_dispatch:
-jobs:
- job1:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: setup-msbuild
-        uses: microsoft/setup-msbuild@v1.1
-      - name: Run a one-line script
-        run: echo Hello, world!
 
- job2:
+jobs:
+    build_api_app:
       name: 🧪 Build API App
       runs-on: ubuntu-latest
-      
       steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
       - uses: actions/checkout@v2
         
       - name: Setup .NET
@@ -30,7 +25,6 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
         working-directory: ./Tailspin.SpaceGame.LeaderboardContainer
-       
         
       - name: Build
         run: dotnet build --no-restore
