@@ -21,7 +21,7 @@ jobs:
           
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ./Tailspin.SpaceGame.LeaderboardContainer
+        working-directory: ./Tailspin
         
       - name: Build
         run: dotnet build --no-restore
