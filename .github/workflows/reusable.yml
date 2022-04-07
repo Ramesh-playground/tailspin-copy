@@ -15,4 +15,4 @@ jobs:
          uses: actions/download-artifact@v2.1.0
          with:
           name: spacegame
-          path: C:\Users\rameshkumar\Desktop    
+          path: C:\Users\rameshkumar\Desktop\spacegame    
